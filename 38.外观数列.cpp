@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-// #include "leetcode.h"
+#include "leetcode.h"
 class Solution {
 public:
     string countAndSay(int n) {
