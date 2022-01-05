@@ -11,7 +11,8 @@ public:
     vector<vector<int>> res;
     vector<int> tmp;
 
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        sort(candidates.begin(), candidates.end());
         backTracking(candidates, target, 0, tmp);
         return res;
     }
@@ -24,13 +25,17 @@ public:
             res.push_back(tmp);
             return;
         } 
-        //选中当前值
-        backTracking(candidates, target, index + 1, tmp);
-        //不选中当前值
-        if (target - candidates[index] >= 0) {
-            tmp.push_back(candidates[index]);
-            backTracking(candidates, target - candidates[index], index, tmp);
-            tmp.pop_back();
+        for(int i = index; i < candidates.size(); i++) {
+            if (i > index && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
+            if (target - candidates[i] >= 0) {
+                tmp.push_back(candidates[i]);
+                backTracking(candidates, target - candidates[i], i, tmp);
+                tmp.pop_back();
+            } else {
+                break;
+            }
         }
     }
 };
