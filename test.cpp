@@ -1,10 +1,3 @@
-/*
- * @lc app=leetcode.cn id=39 lang=cpp
- *
- * [39] 组合总和
- */
-
-// @lc code=start
 #include "leetcode.h"
 class Solution {
 public:
@@ -34,5 +27,9 @@ public:
         }
     }
 };
-// @lc code=end
 
+int main() {
+    Solution *s = new Solution();
+    vector<int> v = {2, 7, 6, 3, 5, 1};
+    cout << s->combinationSum(v, 9).size();
+}
