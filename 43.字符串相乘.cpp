@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=43 lang=cpp
+ *
+ * [43] 字符串相乘
+ */
+
+// @lc code=start
 #include "leetcode.h"
 class Solution {
 public:
@@ -29,8 +36,5 @@ public:
         return ret;
     }
 };
+// @lc code=end
 
-int main() {
-    Solution *s = new Solution();
-    cout << s->multiply("123", "456");
-}
